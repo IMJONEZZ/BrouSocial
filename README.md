@@ -1,4 +1,4 @@
-This is the Tutorial followed to create the React app for this app [React series](https://www.youtube.com/watch?v=RkBfu-W7tt0&list=PLMhAeHCz8S38ryyeMiBPPUnFAiWnoPvWP)
+This is based on these tutorial series: [React series](https://www.youtube.com/watch?v=RkBfu-W7tt0&list=PLMhAeHCz8S38ryyeMiBPPUnFAiWnoPvWP) [Firebase Backend](https://www.youtube.com/watch?v=TkuQAjnaSbM&list=PLqtWgQ5BRLPvaAnoiZD8_z2RTh1VYVqN2)
 
 ## 1: API Base URL
 
