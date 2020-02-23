@@ -41,6 +41,7 @@ class Scream extends Component {
       scream: {
         body,
         createdAt,
+        screamImage,
         userImage,
         userHandle,
         screamId,
@@ -60,8 +61,8 @@ class Scream extends Component {
     return (
       <Card className={classes.card}>
         <CardMedia
-          image={userImage}
-          title="Profile image"
+          image={((!screamImage) ? userImage : screamImage)}
+          title={((!screamImage) ? "Profile image" : "screamImage")}
           className={classes.image}
         />
         <CardContent className={classes.content}>

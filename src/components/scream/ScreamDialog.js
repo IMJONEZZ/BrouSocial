@@ -86,6 +86,7 @@ class ScreamDialog extends Component {
         createdAt,
         likeCount,
         commentCount,
+        screamImage,
         userImage,
         userHandle,
         comments
@@ -100,7 +101,7 @@ class ScreamDialog extends Component {
     ) : (
       <Grid container spacing={16}>
         <Grid item sm={5}>
-          <img src={userImage} alt="Profile" className={classes.profileImage} />
+          <img src={((!screamImage) ? userImage : screamImage)} alt="Profile" className={classes.profileImage} />
         </Grid>
         <Grid item sm={7}>
           <Typography

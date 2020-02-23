@@ -27,6 +27,12 @@ class Navbar extends Component {
                 </MyButton>
               </Link>
               <Notifications />
+              <Button color="inherit" href="https://broutube.brousseauai.com">
+                BrouTube
+              </Button>
+              <Button color="inherit" href="https://brousseauweather.herokuapp.com">
+                Weather
+              </Button>
             </Fragment>
           ) : (
             <Fragment>

@@ -11,6 +11,8 @@ import DialogTitle from '@material-ui/core/DialogTitle';
 import CircularProgress from '@material-ui/core/CircularProgress';
 import AddIcon from '@material-ui/icons/Add';
 import CloseIcon from '@material-ui/icons/Close';
+import PhotoCamera from '@material-ui/icons/PhotoCamera';
+import IconButton from '@material-ui/core/IconButton';
 // Redux stuff
 import { connect } from 'react-redux';
 import { postScream, clearErrors } from '../../redux/actions/dataActions';
@@ -36,6 +38,7 @@ class PostScream extends Component {
   state = {
     open: false,
     body: '',
+    screamImage: null,
     errors: {}
   };
   componentWillReceiveProps(nextProps) {
@@ -45,7 +48,7 @@ class PostScream extends Component {
       });
     }
     if (!nextProps.UI.errors && !nextProps.UI.loading) {
-      this.setState({ body: '', open: false, errors: {} });
+      this.setState({ body: '', screamImage: null, open: false, errors: {} });
     }
   }
   handleOpen = () => {
@@ -60,7 +63,7 @@ class PostScream extends Component {
   };
   handleSubmit = (event) => {
     event.preventDefault();
-    this.props.postScream({ body: this.state.body });
+    this.props.postScream({ body: this.state.body, screamImage: this.state.screamImage });
   };
   render() {
     const { errors } = this.state;
@@ -102,6 +105,20 @@ class PostScream extends Component {
                 onChange={this.handleChange}
                 fullWidth
               />
+              <input 
+              accept="image/*" 
+              className={classes.input} 
+              id="icon-button-file" 
+              name="screamImage"
+              error={errors.screamImage ? true : false}
+              helperText={errors.screamImage}
+              onChange={this.handleChange}
+              type="file" />
+              <label htmlFor="icon-button-file">
+                <IconButton color="primary" aria-label="upload picture" component="span" className={classes.image}>
+                  <PhotoCamera />
+                </IconButton>
+              </label>
               <Button
                 type="submit"
                 variant="contained"
